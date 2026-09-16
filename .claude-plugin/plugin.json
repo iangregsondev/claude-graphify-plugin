@@ -1,0 +1,21 @@
+{
+  "name": "iangregson-graphify",
+  "version": "0.0.0",
+  "description": "Claude Code hooks for graphify: graph-first answers, a fresh graph on every query, and silence in repos without one.",
+  "author": {
+    "name": "Ian Gregson",
+    "url": "https://github.com/iangregsondev"
+  },
+  "repository": "https://github.com/iangregsondev/claude-graphify-plugin",
+  "license": "MIT",
+  "keywords": ["graphify", "hooks", "knowledge-graph"],
+  "userConfig": {
+    "graphify_backend": {
+      "type": "string",
+      "title": "graphify LLM backend",
+      "description": "The backend graphify uses to re-read changed docs in the background, passed as graphify extract --backend. For example claude-cli, which uses your Claude plan. Leave empty to turn the background re-read off.",
+      "required": false,
+      "sensitive": false
+    }
+  }
+}

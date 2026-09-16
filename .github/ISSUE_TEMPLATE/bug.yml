@@ -1,0 +1,49 @@
+name: Bug report
+description: A hook misbehaves, fails, or fires where it should not.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please search existing issues first.
+
+        **Do not report security vulnerabilities here** — use [private reporting](https://github.com/iangregsondev/claude-graphify-plugin/security/advisories/new) instead. See [SECURITY.md](https://github.com/iangregsondev/claude-graphify-plugin/blob/main/SECURITY.md).
+
+  - type: dropdown
+    id: hook
+    attributes:
+      label: Hook
+      description: Which hook? Pick "Not sure" if you cannot tell, or if this is about the repo itself.
+      options:
+        - session-start.sh (session start)
+        - nudge.sh (before Grep, Glob, Read)
+        - gate.sh (before Bash)
+        - Not sure
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, and what the hook did. Include any warning or error verbatim.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Output of `claude --version`, `graphify --version` and `jq --version`. Say whether the repo has a `graphify-out/graph.json`.
+      render: text
+    validations:
+      required: true

@@ -1,0 +1,35 @@
+name: Feature request
+description: Propose a change to the hooks, or to the guidance they give Claude.
+title: "feat: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please search existing issues first.
+
+        For CI, tooling, docs or repo configuration, use the **Tooling or repo change** template instead.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does it solve?
+      description: The situation you keep hitting.
+    validations:
+      required: true
+
+  - type: textarea
+    id: behaviour
+    attributes:
+      label: What should happen?
+      description: When it should fire, what it should do, and how you would know it worked.
+    validations:
+      required: true
+
+  - type: textarea
+    id: silent
+    attributes:
+      label: When should it do nothing?
+      description: The plugin runs in every repo a person opens. Say what it checks so it stays silent in repos without a graph.
+    validations:
+      required: true
