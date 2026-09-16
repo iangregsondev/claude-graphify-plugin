@@ -1,0 +1,25 @@
+# Don't install a version until it has been on the registry a week, so a
+# compromised release has time to be yanked before it reaches a lockfile.
+# Value is in minutes; pnpm 11 defaults to 1440 (one day).
+# Mirrored by `cooldown` in .github/dependabot.yml — keep the two in step.
+minimumReleaseAge: 10080
+
+catalogMode: prefer
+
+catalog:
+  "@anthropic-ai/claude-code": ^2.1.220
+  "@changesets/changelog-github": ^0.7.0
+  "@changesets/cli": ^2.31.1
+  "@types/node": ^24
+  vite: npm:@voidzero-dev/vite-plus-core@0.2.6
+  vite-plus: 0.2.6
+overrides:
+  vite: "catalog:"
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: "*"
+allowBuilds:
+  # Downloads the platform-native binary that backs the `claude` CLI.
+  "@anthropic-ai/claude-code": true
