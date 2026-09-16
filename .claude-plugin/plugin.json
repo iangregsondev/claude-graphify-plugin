@@ -1,6 +1,6 @@
 {
   "name": "iangregson-graphify",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Claude Code hooks for graphify: graph-first answers, a fresh graph on every query, and silence in repos without one.",
   "author": {
     "name": "Ian Gregson",
